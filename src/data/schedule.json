@@ -1,0 +1,51 @@
+{
+  "novaWushu": {
+    "monday": [
+      { "time": "4:00 PM - 5:00 PM", "class": "Private Class*", "instructor": "Coach Stephon", "type": "wushu", "levels": ["open"] },
+      { "time": "5:00 PM - 6:00 PM", "class": "Beginner Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["beginner"] },
+      { "time": "6:00 PM - 7:00 PM", "class": "Intermediate Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["intermediate"] },
+      { "time": "7:00 PM - 8:00 PM", "class": "Team Trials Training", "instructor": "Coach Stephon", "type": "wushu", "levels": ["competition"] }
+    ],
+    "tuesday": [
+      { "time": "4:00 PM - 5:00 PM", "class": "Private Class*", "instructor": "Coach Stephon", "type": "wushu", "levels": ["open"] },
+      { "time": "5:00 PM - 6:00 PM", "class": "Beginner & Intermediate Short Weapon", "instructor": "Coach Stephon", "type": "wushu", "levels": ["beginner", "intermediate"] },
+      { "time": "6:00 PM - 7:00 PM", "class": "Open Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["open"] },
+      { "time": "7:00 PM - 8:00 PM", "class": "Intermediate & Advanced Short Weapon", "instructor": "Coach Stephon", "type": "wushu", "levels": ["intermediate", "advanced"] }
+    ],
+    "wednesday": [
+      { "time": "4:00 PM - 5:00 PM", "class": "Private Class*", "instructor": "Coach Stephon", "type": "wushu", "levels": ["open"] },
+      { "time": "5:00 PM - 6:00 PM", "class": "Beginner & Intermediate Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["beginner", "intermediate"] },
+      { "time": "6:00 PM - 7:00 PM", "class": "Team Trials Training", "instructor": "Coach Stephon", "type": "wushu", "levels": ["competition"] },
+      { "time": "7:00 PM - 8:00 PM", "class": "Intermediate & Advanced Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["intermediate", "advanced"] }
+    ],
+    "thursday": [
+      { "time": "4:00 PM - 5:00 PM", "class": "Private Class*", "instructor": "Coach Stephon", "type": "wushu", "levels": ["open"] },
+      { "time": "5:00 PM - 6:00 PM", "class": "Beginner & Intermediate Long Weapon", "instructor": "Coach Stephon", "type": "wushu", "levels": ["beginner", "intermediate"] },
+      { "time": "6:00 PM - 7:00 PM", "class": "Open Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["open"] },
+      { "time": "7:00 PM - 8:00 PM", "class": "Intermediate & Advanced Long Weapon", "instructor": "Coach Stephon", "type": "wushu", "levels": ["intermediate", "advanced"] }
+    ],
+    "friday": [
+      { "time": "4:00 PM - 5:00 PM", "class": "Private Class*", "instructor": "Coach Stephon", "type": "wushu", "levels": ["open"] },
+      { "time": "5:00 PM - 6:00 PM", "class": "Beginner & Intermediate Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["beginner", "intermediate"] },
+      { "time": "6:00 PM - 7:00 PM", "class": "Open Mixed Weapon", "instructor": "Coach Stephon", "type": "wushu", "levels": ["open"] },
+      { "time": "7:00 PM - 8:00 PM", "class": "Nandu Training", "instructor": "Coach Stephon", "type": "wushu", "levels": ["intermediate", "advanced"] }
+    ],
+    "saturday": [
+      { "time": "10:00 AM - 11:00 AM", "class": "Beginner & Intermediate Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["beginner", "intermediate"] },
+      { "time": "11:00 AM - 12:00 PM", "class": "Beginner & Intermediate Mixed Weapon", "instructor": "Coach Stephon", "type": "wushu", "levels": ["beginner", "intermediate"] },
+      { "time": "1:00 PM - 3:00 PM", "class": "Advanced & Team Trials Training", "instructor": "Coach Stephon", "type": "wushu", "levels": ["advanced", "competition"] }
+    ]
+  },
+  "taichi": {
+    "monday": [],
+    "tuesday": [],
+    "wednesday": [
+      { "time": "6:00 PM - 7:00 PM", "class": "Health Qigong / Fundamental Tai Chi", "instructor": "Coach Debbie", "type": "taichi", "levels": ["open"] },
+      { "time": "7:00 PM - 8:00 PM", "class": "Yang Tai Chi", "instructor": "Coach Debbie", "type": "taichi", "levels": ["open"] },
+      { "time": "7:30 PM - 8:30 PM", "class": "Tai Chi Sword", "instructor": "Coach Debbie", "type": "taichi", "levels": ["open"] }
+    ],
+    "thursday": [],
+    "friday": [],
+    "saturday": []
+  }
+}

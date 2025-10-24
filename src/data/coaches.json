@@ -1,0 +1,59 @@
+{
+  "coaches": [
+    {
+      "id": "stephon-morton",
+      "name": "Coach Stephon Morton",
+      "title": "Founder & Head Coach",
+      "bio": "Born in Washington, D.C., Stephon Morton began his lifelong journey in martial arts at just eight years old. Growing up in a military family, he trained in a variety of styles including karate, taekwondo, and boxing, eventually becoming an assistant instructor during his high school years.",
+      "fullBio": "Born in Washington, D.C., Stephon Morton began his lifelong journey in martial arts at just eight years old. Growing up in a military family, he trained in a variety of styles including karate, taekwondo, and boxing, eventually becoming an assistant instructor during his high school years.\n\nIn 2000, Stephon began formal Wushu training under Master Xiaolin Lu while studying at the University of Maryland, College Park (UMCP). His talent quickly stood out, and by 2002, he was selected to perform with the U.S. Wushu Demonstration Team at the Salt Lake City Winter Olympic Games.\n\nFollowing this achievement, Stephon began assisting at O-Mei Wushu (Kungfu), where he helped coach young students, organize performances, and promote the school's programs.\n\nAs an athlete, Stephon became a three-time member of the U.S. Wushu Team, representing his country at multiple world-class events including the 7th & 8th World Wushu Championships and the 5th Pan-American Wushu Championships. His accomplishments have been featured in major publications including The Washington Post, Kungfu Magazine, and Inside Kung-Fu.\n\nHe further refined his craft through elite training with the Hebei and Sichuan professional Wushu teams in China (2007–2008).\n\nToday, Coach Stephon combines his extensive experience, technical mastery, and passion for teaching to lead NOVA Wushu Academy with excellence and integrity. His coaching style emphasizes personal growth, attention to detail, and fostering an encouraging, disciplined environment for students of all backgrounds.",
+      "coachingExperience": [
+        "U.S. Wushu Team Coach – 10th World Wushu Championships, Toronto (2009)",
+        "U.S. Wushu Team Coach – 8th Pan-American Wushu Championships, Argentina (2011)",
+        "U.S. Wushu Team Coach – 11th World Wushu Championships, Ankara (2011)",
+        "U.S. Wushu Team Coach – 9th World Games, Cali, Colombia (2013)",
+        "U.S. Junior Wushu Team Coach – 2nd World Junior Wushu Championships, Bali (2008)",
+        "U.S. Junior Wushu Team Coach – 10th Pan-American Wushu Championships, Costa Rica (2014)"
+      ],
+      "athleticAchievements": [
+        "U.S. Wushu Team: A Team (2003–2007), C Team (2009–2011)",
+        "7th World Wushu Championships (Macau 2003) – Men's Jianshu, 8th Place",
+        "5th Pan-American Wushu Championships (USA 2004) – 1st Place Men's Jianshu, 4th Place Men's Changquan",
+        "8th World Wushu Championships (Hanoi 2005) – Men's Duilian, 7th Place"
+      ],
+      "certifications": [
+        "Certified Wushu Coach – International Wushu Federation (IWUF)"
+      ],
+      "image": "/images/coaches/stephon.jpg"
+    },
+    {
+      "id": "deborah-yang",
+      "name": "Coach Deborah (Debbie) Yang",
+      "title": "Taiji & Internal Arts Instructor",
+      "bio": "Coach Deborah Yang brings decades of experience in Tai Ji (Tai Chi) and Yoga, emphasizing the harmony between mind, body, and energy in her teaching. Her classes focus on developing strength, balance, and inner calm, guiding students to integrate these principles into their daily lives.",
+      "fullBio": "Coach Deborah Yang brings decades of experience in Tai Ji (Tai Chi) and Yoga, emphasizing the harmony between mind, body, and energy in her teaching. Her classes focus on developing strength, balance, and inner calm, guiding students to integrate these principles into their daily lives.\n\nDeborah has earned numerous gold medals in Tai Ji Quan (Tai Chi) and Tai Ji Sword competitions at both the national and international levels.\n\nShe has trained under some of the most respected masters in the world, including Master Lu Xiaoling, Master Chen Zheng Lei, and Master Chang Jung Jen.\n\nAs both a martial artist and a certified yoga instructor, she combines her deep understanding of internal energy and mindfulness to help students cultivate stability, flexibility, and focus.",
+      "athleticAchievements": [
+        "Women's Internal Forms Grand Champion – Baltimore Golden Cup Competition (1998)",
+        "Pan-American Wushu Championships – 1st Place Taiji Barehand, 1st Place Taiji Sword (2000)",
+        "Inducted into USAWKF Hall of Fame, Internal Athlete Division (2002)",
+        "Adult U.S. Wushu Team Member – A Team (2003)",
+        "Competitor – 7th World Wushu Championships (Macau 2003)",
+        "National Tournament – 1st Place Chen Style Taiji"
+      ],
+      "certifications": [
+        "Certified Yoga Instructor – Yoga Alliance (since 2006)",
+        "Certified Health Qigong Instructor"
+      ],
+      "image": "/images/coaches/deborah-yang.jpg"
+    },
+    {
+      "id": "danny-tu",
+      "name": "Coach Danny Tu",
+      "title": "Assistant Coach",
+      "bio": "Coach Danny Tu brings his expertise and passion for martial arts to NOVA Wushu Academy. More information coming soon.",
+      "fullBio": "Coach Danny Tu brings his expertise and passion for martial arts to NOVA Wushu Academy. More information coming soon.",
+      "athleticAchievements": [],
+      "certifications": [],
+      "image": "/images/coaches/danny.jpg"
+    }
+  ]
+}

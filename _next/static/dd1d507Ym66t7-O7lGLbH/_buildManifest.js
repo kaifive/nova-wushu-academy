@@ -1,10 +1,15 @@
 self.__BUILD_MANIFEST = {
   "/_error": [
-    "./static/chunks/fe3aa4b8401d9fe2.js"
+    "./static/chunks/7e17b1aae0dc5983.js"
   ],
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/nova-wushu-academy//_next/:path+",
+        "destination": "/nova-wushu-academy/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [

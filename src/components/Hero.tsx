@@ -6,22 +6,22 @@ import Link from 'next/link';
 import { ArrowRight, Play } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-// Replace with your actual logo import
+import fs from 'fs';
+import path from 'path';
+
 import logo from '../../public/images/branding/NOVA Wushu Circle.png'
 
-// Auto import gallery
-const importAll = (r: any) => r.keys().map(r);
-const galleryImages: string[] = importAll(
-  require.context('../../public/images/gallery', false, /\.(png|jpe?g|webp)$/)
-);
+interface HeroProps {
+  galleryImages: string[];
+}
 
-
-const Hero = () => {
+const Hero = ({ galleryImages }: HeroProps) => {
   const [imagesLoaded, setImagesLoaded] = useState(true);
   const [shuffledTop, setShuffledTop] = useState<string[]>([]);
   const [shuffledBottom, setShuffledBottom] = useState<string[]>([]);
 
   const shuffle = (arr: string[]) => arr.sort(() => Math.random() - 0.5);
+  
   useEffect(() => {
     const preload = Promise.all(
       galleryImages.map(
@@ -72,7 +72,6 @@ const Hero = () => {
                   alt={`Gallery top ${index}`}
                   fill
                   loading="lazy"
-                  placeholder="blur"
                   className="object-cover opacity-70 hover:opacity-90 transition-opacity duration-500 border-y-8 border-black"
                 />
                 <div className="absolute inset-0 bg-black/30"></div>
@@ -102,7 +101,6 @@ const Hero = () => {
                   alt={`Gallery bottom ${index}`}
                   fill
                   loading="lazy"
-                  placeholder="blur"
                   className="object-cover opacity-70 hover:opacity-90 transition-opacity duration-500 border-y-8 border-black"
                 />
                 <div className="absolute inset-0 bg-black/30"></div>

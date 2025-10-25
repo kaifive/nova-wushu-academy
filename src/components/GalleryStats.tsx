@@ -40,24 +40,6 @@ const GalleryStats = () => {
         },
     ];
 
-    const achievements = [
-        {
-            title: 'World Championships',
-            description: 'Students competing at the highest international level',
-            image: '/images/achievements/world-championships.jpg',
-        },
-        {
-            title: 'Pan-American Games',
-            description: 'Representing the United States in regional competitions',
-            image: '/images/achievements/pan-american.jpg',
-        },
-        {
-            title: 'National Championships',
-            description: 'Consistent top performers at U.S. National Championships',
-            image: '/images/achievements/national-championships.jpg',
-        },
-    ];
-
     return (
         <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

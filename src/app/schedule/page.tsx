@@ -6,6 +6,20 @@ import scheduleData from '@/data/schedule.json';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 
+
+type ScheduleClass = {
+    time: string;
+    class: string;
+    instructor: string;
+    type: string;
+    levels: string[];
+};
+
+type CombinedClass = ScheduleClass & {
+    day: string;     // human-readable day, e.g., 'Monday'
+    dayKey: string;  // the key in novaWushu/taichi
+};
+
 export default function Schedule() {
     const { novaWushu, taichi } = scheduleData;
 
@@ -18,7 +32,7 @@ export default function Schedule() {
 
     // Combine all classes into one array
     const allClasses = useMemo(() => {
-        const combined: any[] = [];
+        const combined: CombinedClass[] = [];
         days.forEach((day, index) => {
             const wushuClasses = novaWushu[day as keyof typeof novaWushu] || [];
             const taichiClasses = taichi[day as keyof typeof taichi] || [];
@@ -27,12 +41,12 @@ export default function Schedule() {
                 combined.push({
                     ...classItem,
                     day: dayNames[index],
-                    dayKey: day
+                    dayKey: day,
                 });
             });
         });
         return combined;
-    }, [novaWushu, taichi]);
+    }, [novaWushu, taichi, dayNames, days]);
 
     const filteredClasses = useMemo(() => {
         return allClasses.filter(classItem =>

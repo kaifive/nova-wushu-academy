@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { lazy, Suspense, useState, useEffect } from 'react';
+import { lazy, Suspense } from 'react';
 import coachesData from '@/data/coaches.json';
 import Link from 'next/link';
 

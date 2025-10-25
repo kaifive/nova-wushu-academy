@@ -1,8 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Trophy, Medal, Star, Award, Users, Calendar } from 'lucide-react';
+import { Trophy, Medal, Star, Award, Users } from 'lucide-react';
 import hallOfFameData from '@/data/hall-of-fame.json';
 import Link from 'next/link';
 
@@ -42,7 +41,7 @@ export default function HallOfFame() {
                             className="space-y-8"
                         >
                             <div className="space-y-8">
-                                {majorCompetitions.map((competition, index) => (
+                                {majorCompetitions.map((competition) => (
                                     <motion.div
                                         key={`${competition.competition}_${competition.year}`}
                                         initial={{ opacity: 0, y: 30 }}

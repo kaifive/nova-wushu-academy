@@ -3,7 +3,10 @@
 import { motion } from 'framer-motion';
 import { Award, Users, Star, User } from 'lucide-react';
 
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
+
+import stephon from '../../public/images/coaches/stephon.jpg'
+import danny from '../../public/images/coaches/danny.jpg'
 
 interface CoachCardProps {
   coach: {
@@ -19,6 +22,11 @@ interface CoachCardProps {
   };
 }
 
+const IMAGE_MAP: Record<string, StaticImageData> = {
+  '/images/coaches/stephon.jpg': stephon,
+  '/images/coaches/danny.jpg': danny,
+}
+
 const CoachCard = ({ coach }: CoachCardProps) => {
   return (
     <motion.div
@@ -32,9 +40,9 @@ const CoachCard = ({ coach }: CoachCardProps) => {
       <div className="relative h-80 bg-gradient-to-br from-primary/20 to-primary/40">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 flex items-center justify-center">
-        {coach.image ? (
+        {coach.image && IMAGE_MAP[coach.image] ? (
           <Image
-            src={coach.image}
+            src={IMAGE_MAP[coach.image]}
             alt={coach.name}
             fill
             className="object-cover"

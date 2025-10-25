@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://novawushu.com"),
+  metadataBase: new URL("https://kaifive.github.io/nova-wushu-academy"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "NOVA Wushu Academy - Premier Martial Arts Training",
     description: "Professional Wushu and Taiji training in Northern Virginia. Build confidence, discipline, and excellence through martial arts.",
-    url: "https://novawushu.com",
+    url: "https://kaifive.github.io/nova-wushu-academy/",
     siteName: "NOVA Wushu Academy",
     images: [
       {

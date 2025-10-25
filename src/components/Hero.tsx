@@ -145,7 +145,7 @@ const Hero = () => {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
 
-            <button className="group flex items-center space-x-2 text-white hover:text-white-400 transition-colors duration-300">
+            <button className="group flex items-center space-x-2 text-white hover:text-white-400 hover:underline transition-colors duration-300">
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors duration-300">
                 <Play className="w-6 h-6 ml-1" />
               </div>

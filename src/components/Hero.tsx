@@ -1,42 +1,49 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import { motion } from 'framer-motion';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Play } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-import logo from '../../public/images/branding/NOVA Wushu Circle.png'
+import aaron from '../../public/images/gallery/aaron.jpg'
+import audrey from '../../public/images/gallery/audrey.jpg'
+import blake from '../../public/images/gallery/blake.jpg'
+import chloe from '../../public/images/gallery/chloe.jpg'
+import chris from '../../public/images/gallery/chris.jpg'
+import danny from '../../public/images/gallery/danny.jpg'
+import khai from '../../public/images/gallery/khai.jpg'
+import khang from '../../public/images/gallery/khang.jpg'
+import mariel from '../../public/images/gallery/mariel.jpg'
 
-interface HeroProps {
-  galleryImages: string[];
-}
+const galleryImages: StaticImageData[] = [
+  aaron, audrey, blake, chloe, chris, danny, khai, khang, mariel
+];
 
-const Hero = ({ galleryImages }: HeroProps) => {
-  const [imagesLoaded, setImagesLoaded] = useState(true);
-  const [shuffledTop, setShuffledTop] = useState<string[]>([]);
-  const [shuffledBottom, setShuffledBottom] = useState<string[]>([]);
+const Hero = () => {
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [shuffledTop, setShuffledTop] = useState<StaticImageData[]>([]);
+  const [shuffledBottom, setShuffledBottom] = useState<StaticImageData[]>([]);
 
-  const shuffle = (arr: string[]) => arr.sort(() => Math.random() - 0.5);
-  
+  const shuffle = (arr: StaticImageData[]) => [...arr].sort(() => Math.random() - 0.5);
+
   useEffect(() => {
     const preload = Promise.all(
       galleryImages.map(
-        (src) =>
+        (img) =>
           new Promise<void>((resolve) => {
-            const img = new window.Image();
-            img.src = src;
-            img.onload = () => resolve();
-            img.onerror = () => resolve();
+            const temp = new window.Image();
+            temp.src = img.src; // use static import src
+            temp.onload = () => resolve();
+            temp.onerror = () => resolve();
           })
       )
     );
-    
 
     preload.then(() => {
       setTimeout(() => {
-        setShuffledTop(shuffle([...galleryImages]));
-        setShuffledBottom(shuffle([...galleryImages]));
+        setShuffledTop(shuffle(galleryImages));
+        setShuffledBottom(shuffle(galleryImages));
         setImagesLoaded(true);
       }, 600);
     });
@@ -70,6 +77,7 @@ const Hero = ({ galleryImages }: HeroProps) => {
                   alt={`Gallery top ${index}`}
                   fill
                   loading="lazy"
+                  placeholder="blur"
                   className="object-cover opacity-70 hover:opacity-90 transition-opacity duration-500 border-y-8 border-black"
                 />
                 <div className="absolute inset-0 bg-black/30"></div>
@@ -99,6 +107,7 @@ const Hero = ({ galleryImages }: HeroProps) => {
                   alt={`Gallery bottom ${index}`}
                   fill
                   loading="lazy"
+                  placeholder="blur"
                   className="object-cover opacity-70 hover:opacity-90 transition-opacity duration-500 border-y-8 border-black"
                 />
                 <div className="absolute inset-0 bg-black/30"></div>
@@ -136,7 +145,7 @@ const Hero = ({ galleryImages }: HeroProps) => {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
 
-            <button className="group flex items-center space-x-2 text-white hover:text-yellow-400 transition-colors duration-300">
+            <button className="group flex items-center space-x-2 text-white hover:text-white-400 transition-colors duration-300">
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors duration-300">
                 <Play className="w-6 h-6 ml-1" />
               </div>
@@ -146,13 +155,11 @@ const Hero = ({ galleryImages }: HeroProps) => {
         </motion.div>
       </div>
 
-      {/* 3D Door Loader */}
+      {/* 3D Door Loader
       <AnimatePresence>
         {!imagesLoaded && (
           <>
-            {/* Container with perspective for 3D rotation */}
             <div className="absolute inset-0 z-50 flex perspective-[2000px]">
-              {/* Left door */}
               <motion.div
                 initial={{ rotateY: 0 }}
                 animate={{ rotateY: -90 }}
@@ -160,7 +167,6 @@ const Hero = ({ galleryImages }: HeroProps) => {
                 transition={{ duration: 1.2, ease: 'easeInOut', delay: 0.2 }}
                 className="w-1/2 h-full bg-white origin-left"
               />
-              {/* Right door */}
               <motion.div
                 initial={{ rotateY: 0 }}
                 animate={{ rotateY: 90 }}
@@ -170,10 +176,8 @@ const Hero = ({ galleryImages }: HeroProps) => {
               />
             </div>
 
-            {/* Vertical center line */}
             <div className="absolute left-1/2 top-0 h-full w-[2px] bg-primary -translate-x-1/2 z-[60]" />
 
-            {/* Logo */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -193,7 +197,7 @@ const Hero = ({ galleryImages }: HeroProps) => {
             </motion.div>
           </>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       {/* Scroll Indicator */}
       <motion.div

@@ -20,11 +20,11 @@ type CombinedClass = ScheduleClass & {
     dayKey: string;  // the key in novaWushu/taichi
 };
 
+const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
 export default function Schedule() {
     const { novaWushu, taichi } = scheduleData;
-
-    const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-    const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
     // initial state: all selected
     const [selectedTypes, setSelectedTypes] = useState<string[]>(['wushu', 'taichi']);

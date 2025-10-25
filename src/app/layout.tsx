@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NOVA Wushu Academy - Premier Martial Arts Training in Northern Virginia",
-  description: "Professional Wushu and Taiji training in Northern Virginia. Build confidence, discipline, and excellence through martial arts. Sign up for a trial class today!",
+  title: "NOVA Wushu Academy",
+  description: "Learn professional Wushu and Taiji training in Northern Virginia. Build confidence, discipline, and excellence through martial arts. Sign up for a trial class today!",
   keywords: "wushu, taiji, martial arts, northern virginia, training, classes, competition",
   authors: [{ name: "NOVA Wushu Academy" }],
   creator: "NOVA Wushu Academy",

@@ -6,9 +6,6 @@ import Link from 'next/link';
 import { ArrowRight, Play } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-import fs from 'fs';
-import path from 'path';
-
 import logo from '../../public/images/branding/NOVA Wushu Circle.png'
 
 interface HeroProps {
@@ -29,11 +26,12 @@ const Hero = ({ galleryImages }: HeroProps) => {
           new Promise<void>((resolve) => {
             const img = new window.Image();
             img.src = src;
-            img.onload = resolve;
-            img.onerror = resolve;
+            img.onload = () => resolve();
+            img.onerror = () => resolve();
           })
       )
     );
+    
 
     preload.then(() => {
       setTimeout(() => {

@@ -46,7 +46,7 @@ export default function Schedule() {
             });
         });
         return combined;
-    }, [novaWushu, taichi, dayNames, days]);
+    }, [novaWushu, taichi]);
 
     const filteredClasses = useMemo(() => {
         return allClasses.filter(classItem =>

@@ -16,7 +16,7 @@
             ]
         },
         {
-            "competition": "Pan American Wushu Championships",
+            "competition": "12th Pan American Wushu Championships - Buenos Aires, Argentina",
             "year": "2018",
             "results": [
                 "Khai Nguyen - Gold Medalist: Men's A Group Nanquan",
@@ -61,7 +61,7 @@
             ]
         },
         {
-            "competition": "6th World Junior Wushu Championships",
+            "competition": "6th World Junior Wushu Championships - Burgas, Bulgaria",
             "year": "2016",
             "results": [
                 "Khang Nguyen - 12th Place: Men's A Group Gunshu",
@@ -92,8 +92,8 @@
             ]
         },
         {
-            "competition": "Pan American Wushu Championships",
-            "year": "2013",
+            "competition": "10th Pan American Wushu Championships - San José, Costa Rica",
+            "year": "2014",
             "results": [
                 "Khang Nguyen - Gold Medalist: Men's B Group Gunshu",
                 "Richard Li - Silver Medalist: Men's A Group Jianshu",
@@ -108,10 +108,10 @@
                 "Kaitlyn Nguyen - Bronze Medalist: Women's C Group Daoshu",
                 "Richard Li - 4th Place: Men's A Group Changquan",
                 "Khai Nguyen - 4th Place: Men's B Group Nandao",
-                "Matthew Pham Hang - 4th Place: Men's C Group Qiangshu",
+                "Matthew Pham - 4th Place: Men's C Group Qiangshu",
                 "Shari Tian - 5th Place: Women's Adult Changquan",
                 "Khai Nguyen - 5th Place: Men's B Group Nangun",
-                "Matthew Pham Hang - 6th Place: Men's C Group Changquan",
+                "Matthew Pham - 6th Place: Men's C Group Changquan",
                 "Shari Tian - 7th Place: Women's Adult Qiangshu",
                 "Shari Tian - 7th Place: Women's Adult Jianshu",
                 "Khai Nguyen - 7th Place: Men's B Group Nanquan",
@@ -146,7 +146,7 @@
             ]
         },
         {
-            "competition": "Pan American Wushu Championships",
+            "competition": "8th Pan American Wushu Championships - Buenos Aires, Argentina",
             "year": "2010",
             "results": [
                 "Danny Tu - Silver Medalist: Men's A Group Daoshu",
@@ -170,10 +170,32 @@
             ]
         },
         {
+            "competition": "8th World Wushu Championships - Hanoi, Vietnam",
+            "year": "2005",
+            "results": [
+                "Stephon Morton - 7th Place: Men's Duilian"
+            ]
+        },
+        {
             "competition": "U.S. Adult Wushu Team Trials",
             "year": "2005",
             "results": [
                 "Stephon Morton - Men's A Team"
+            ]
+        },
+        {
+            "competition": "5th Pan American Wushu Championships - Annandale, Virginia, USA",
+            "year": "2004",
+            "results": [
+                "Stephon Morton - Gold Medalist: Men's Jianshu",
+                "Stephon Morton - 4th Place: Men's Changquan"
+            ]
+        },
+        {
+            "competition": "7th World Wushu Championships - Macau, China",
+            "year": "2003",
+            "results": [
+                "Stephon Morton - 8th Place: Men's Jianshu"
             ]
         }
     ]

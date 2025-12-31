@@ -8,11 +8,11 @@ import Image from 'next/image';
 import logoSrc from '../../public/images/branding/NOVA Wushu Circle.png'
 
 import {
-    NOVA_FB,
-    NOVA_INSTA,
-    NOVA_YT,
-    WUSHU_TOOLKIT,
-    APPAREL_STORE
+  NOVA_FB,
+  NOVA_INSTA,
+  NOVA_YT,
+  WUSHU_TOOLKIT,
+  APPAREL_STORE
 } from '../data/links'
 
 interface FooterLink {
@@ -64,15 +64,15 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center space-x-2 mb-4">
-            <div className="w-10 h-10 relative rounded-full overflow-hidden bg-primary flex-shrink-0">
-                            <Image
-                                src={logoSrc}
-                                alt="NOVA Wushu Academy Logo"
-                                fill
-                                className="object-contain"
-                                priority
-                            />
-                        </div>
+              <div className="w-10 h-10 relative rounded-full overflow-hidden bg-primary flex-shrink-0">
+                <Image
+                  src={logoSrc}
+                  alt="NOVA Wushu Academy Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
               <span className="text-xl font-bold">NOVA Wushu Academy</span>
             </div>
             <div className="space-y-2 text-gray-300">

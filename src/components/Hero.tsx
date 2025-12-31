@@ -16,24 +16,32 @@ import khai from '../../public/images/gallery/khai.jpg'
 import khang from '../../public/images/gallery/khang.jpg'
 import mariel from '../../public/images/gallery/mariel.jpg'
 
-const galleryImages: StaticImageData[] = [
-  aaron, audrey, blake, chloe, chris, danny, khai, khang, mariel
+const galleryItems: { img: StaticImageData; alt: string }[] = [
+  { img: aaron, alt: 'Aaron practicing Wushu form at NOVA Wushu Academy' },
+  { img: audrey, alt: 'Audrey demonstrating Taiji / Tai Chi at NOVA Wushu Academy' },
+  { img: blake, alt: 'Blake performing a Wushu routine' },
+  { img: chloe, alt: 'Chloe training barefoot in a Wushu class' },
+  { img: chris, alt: 'Chris practicing a weapon form' },
+  { img: danny, alt: 'Danny training in Wushu kicks and acrobatics' },
+  { img: khai, alt: 'Khai performing a Wushu routine' },
+  { img: khang, alt: 'Khang practicing with a traditional Wushu weapon' },
+  { img: mariel, alt: 'Mariel demonstrating a Taiji sequence' },
 ];
 
 const Hero = () => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [shuffledTop, setShuffledTop] = useState<StaticImageData[]>([]);
-  const [shuffledBottom, setShuffledBottom] = useState<StaticImageData[]>([]);
+  const [shuffledTop, setShuffledTop] = useState<typeof galleryItems>([]);
+  const [shuffledBottom, setShuffledBottom] = useState<typeof galleryItems>([]);
 
-  const shuffle = (arr: StaticImageData[]) => [...arr].sort(() => Math.random() - 0.5);
+  const shuffle = <T,>(arr: T[]) => [...arr].sort(() => Math.random() - 0.5);
 
   useEffect(() => {
     const preload = Promise.all(
-      galleryImages.map(
-        (img) =>
+      galleryItems.map(
+        (item) =>
           new Promise<void>((resolve) => {
             const temp = new window.Image();
-            temp.src = img.src; // use static import src
+            temp.src = item.img.src; // use static import src
             temp.onload = () => resolve();
             temp.onerror = () => resolve();
           })
@@ -42,8 +50,8 @@ const Hero = () => {
 
     preload.then(() => {
       setTimeout(() => {
-        setShuffledTop(shuffle(galleryImages));
-        setShuffledBottom(shuffle(galleryImages));
+        setShuffledTop(shuffle(galleryItems));
+        setShuffledBottom(shuffle(galleryItems));
         setImagesLoaded(true);
       }, 600);
     });
@@ -52,7 +60,7 @@ const Hero = () => {
 
   // --- LOADING ANIMATION ---
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black text-white overflow-hidden">
+    <section className="relative h-[calc(100vh-64px)] mt-16 flex items-center justify-center bg-black text-white overflow-hidden">
       {/* Hero background always mounted */}
       <div
         className={`absolute inset-0 transition-opacity duration-700 ${
@@ -63,18 +71,18 @@ const Hero = () => {
         <div className="absolute top-0 left-0 w-full h-1/3 overflow-hidden py-2">
           <motion.div
             className="flex h-full"
-            animate={{ x: [0, -galleryImages.length * 420] }}
+            animate={{ x: [0, -galleryItems.length * 420] }}
             transition={{ duration: 220, repeat: Infinity, ease: 'linear' }}
           >
-            {[...shuffledTop, ...shuffledTop].map((img, index) => (
+            {[...shuffledTop, ...shuffledTop].map((item, index) => (
               <div
                 key={`top-${index}`}
                 className="relative flex-shrink-0 mx-2"
                 style={{ width: '420px', aspectRatio: '16/9' }}
               >
                 <Image
-                  src={img}
-                  alt={`Gallery top ${index}`}
+                  src={item.img}
+                  alt={item.alt}
                   fill
                   loading="lazy"
                   placeholder="blur"
@@ -93,18 +101,18 @@ const Hero = () => {
         <div className="absolute bottom-0 left-0 w-full h-1/3 overflow-hidden py-2">
           <motion.div
             className="flex h-full"
-            animate={{ x: [-galleryImages.length * 420, 0] }}
+            animate={{ x: [-galleryItems.length * 420, 0] }}
             transition={{ duration: 220, repeat: Infinity, ease: 'linear' }}
           >
-            {[...shuffledBottom, ...shuffledBottom].map((img, index) => (
+            {[...shuffledBottom, ...shuffledBottom].map((item, index) => (
               <div
                 key={`bottom-${index}`}
                 className="relative flex-shrink-0 mx-2"
                 style={{ width: '420px', aspectRatio: '16/9' }}
               >
                 <Image
-                  src={img}
-                  alt={`Gallery bottom ${index}`}
+                  src={item.img}
+                  alt={item.alt}
                   fill
                   loading="lazy"
                   placeholder="blur"
@@ -145,12 +153,12 @@ const Hero = () => {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
 
-            <button className="group flex items-center space-x-2 text-white hover:text-white-400 hover:underline transition-colors duration-300">
+            {/* <button aria-label="Watch our story video" className="group flex items-center space-x-2 text-white hover:text-white-400 hover:underline transition-colors duration-300">
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors duration-300">
                 <Play className="w-6 h-6 ml-1" />
               </div>
               <span className="text-lg font-medium">Watch Our Story</span>
-            </button>
+            </button> */}
           </div>
         </motion.div>
       </div>
@@ -185,9 +193,9 @@ const Hero = () => {
               className="absolute z-[70] flex items-center justify-center"
             >
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary">
-                <Image
+                  <Image
                   src={logo}
-                  alt="Logo"
+                  alt="NOVA Wushu Academy Logo"
                   width={128}
                   height={128}
                   className="object-contain"

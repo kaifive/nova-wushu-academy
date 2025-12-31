@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 import { motion } from 'framer-motion';
 import { Award, Users, Star, User } from 'lucide-react';
 
@@ -7,6 +9,8 @@ import Image, { StaticImageData } from 'next/image';
 
 import stephon from '../../public/images/coaches/stephon.jpg'
 import danny from '../../public/images/coaches/danny.jpg'
+import coachstephon from '../../public/images/coaches/coachstephon.jpg'
+import coachdanny from '../../public/images/coaches/coachdanny.jpg'
 
 interface CoachCardProps {
   coach: {
@@ -25,9 +29,13 @@ interface CoachCardProps {
 const IMAGE_MAP: Record<string, StaticImageData> = {
   '/images/coaches/stephon.jpg': stephon,
   '/images/coaches/danny.jpg': danny,
+  '/images/coaches/coachstephon.jpg': coachstephon,
+  '/images/coaches/coachdanny.jpg': coachdanny,
 }
 
 const CoachCard = ({ coach }: CoachCardProps) => {
+  const [coachImg, setCoachImage] = useState(IMAGE_MAP[coach.image] || null);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -40,19 +48,28 @@ const CoachCard = ({ coach }: CoachCardProps) => {
       <div className="relative h-80 bg-gradient-to-br from-primary/20 to-primary/40">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 flex items-center justify-center">
-        {coach.image && IMAGE_MAP[coach.image] ? (
-          <Image
-            src={IMAGE_MAP[coach.image]}
-            alt={coach.name}
-            fill
-            className="object-cover"
-            priority
-          />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
-            <User className="w-16 h-16 text-white/70" />
-          </div>
-        )}
+          {coach.image && IMAGE_MAP[coach.image] ? (
+            <Image
+              src={coachImg}
+              alt={`${coach.name} — ${coach.title} at NOVA Wushu Academy`}
+              fill
+              className="object-cover"
+              priority
+              onClick={(e) => {
+                if (e.detail == 5) {
+                  const easterEggImageArr = coach.image.split("/")
+                  easterEggImageArr[easterEggImageArr.length - 1] = easterEggImageArr[easterEggImageArr.length - 1].replace("coach", "");
+                  const easterEggImagePath = easterEggImageArr.join("/");
+                  const easterEggImage = IMAGE_MAP[easterEggImagePath];
+                  setCoachImage(easterEggImage);
+                }
+              }}
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
+              <User className="w-16 h-16 text-white/70" />
+            </div>
+          )}
         </div>
         <div className="absolute bottom-4 left-4 right-4">
           <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
@@ -74,17 +91,12 @@ const CoachCard = ({ coach }: CoachCardProps) => {
               Athletic Achievements
             </h4>
             <ul className="space-y-2">
-              {coach.athleticAchievements.slice(0, 3).map((achievement, index) => (
+              {coach.athleticAchievements.map((achievement, index) => (
                 <li key={index} className="text-sm text-gray-600 flex items-start">
                   <Star className="w-4 h-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                   <span>{achievement}</span>
                 </li>
               ))}
-              {coach.athleticAchievements.length > 3 && (
-                <li className="text-sm text-primary font-medium">
-                  +{coach.athleticAchievements.length - 3} more achievements
-                </li>
-              )}
             </ul>
           </div>
         )}
@@ -97,17 +109,12 @@ const CoachCard = ({ coach }: CoachCardProps) => {
               Coaching Experience
             </h4>
             <ul className="space-y-2">
-              {coach.coachingExperience.slice(0, 3).map((experience, index) => (
+              {coach.coachingExperience.map((experience, index) => (
                 <li key={index} className="text-sm text-gray-600 flex items-start">
                   <div className="w-2 h-2 bg-primary rounded-full mr-2 mt-2 flex-shrink-0"></div>
                   <span>{experience}</span>
                 </li>
               ))}
-              {coach.coachingExperience.length > 3 && (
-                <li className="text-sm text-primary font-medium">
-                  +{coach.coachingExperience.length - 3} more experiences
-                </li>
-              )}
             </ul>
           </div>
         )}

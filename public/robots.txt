@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Preferred canonical host
+Host: www.novawushuacademy.com
+
+Sitemap: https://www.novawushuacademy.com/sitemap.xml

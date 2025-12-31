@@ -40,9 +40,7 @@
     "monday": [],
     "tuesday": [],
     "wednesday": [
-      { "time": "6:00 PM - 7:00 PM", "class": "Health Qigong / Fundamental Tai Chi", "instructor": "Coach Debbie", "type": "taichi", "levels": ["open"] },
-      { "time": "7:00 PM - 8:00 PM", "class": "Yang Tai Chi", "instructor": "Coach Debbie", "type": "taichi", "levels": ["open"] },
-      { "time": "7:30 PM - 8:30 PM", "class": "Tai Chi Sword", "instructor": "Coach Debbie", "type": "taichi", "levels": ["open"] }
+      { "time": "6:00 PM - 7:00 PM", "class": "Health Qigong / Fundamental Tai Chi", "instructor": "Coach Debbie", "type": "taichi", "levels": ["open"] }
     ],
     "thursday": [],
     "friday": [],

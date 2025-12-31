@@ -62,6 +62,8 @@ const CoachCard = ({ coach }: CoachCardProps) => {
                   const easterEggImagePath = easterEggImageArr.join("/");
                   const easterEggImage = IMAGE_MAP[easterEggImagePath];
                   setCoachImage(easterEggImage);
+                } else {
+                  setCoachImage(IMAGE_MAP[coach.image]);
                 }
               }}
             />

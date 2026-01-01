@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { Mail, Phone, MapPin, Facebook, Instagram, Youtube } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -22,6 +23,7 @@ interface FooterLink {
 }
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
   const currentYear = new Date().getFullYear();
 
   const footerLinks: { resources: FooterLink[] } = {
@@ -51,6 +53,13 @@ const Footer = () => {
       target: '_blank',
     },
   ];
+
+  const handleSubscribe = () => {
+    const url = `https://magic.beehiiv.com/v1/2f934e1c-3768-470f-a9fa-da89f3757432?email=${email}&redirect_to=https%3A%2F%2Fwww.novawushuacademy.com%2F`;
+    window.open(url, '_blank');
+    setEmail('');
+  };
+
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -148,8 +157,13 @@ const Footer = () => {
                 type="email"
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-primary text-white placeholder-gray-400"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              <button className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors duration-200 font-medium">
+              <button
+                className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors duration-200 font-medium"
+                onClick={handleSubscribe}
+              >
                 Subscribe
               </button>
             </div>

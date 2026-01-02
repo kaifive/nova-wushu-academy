@@ -28,7 +28,7 @@
     "saturday": [
       { "time": "10:00 AM - 11:00 AM", "class": "Open Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["open"] },
       { "time": "11:00 AM - 12:00 PM", "class": "Open Mixed Weapon", "instructor": "Coach Stephon", "type": "wushu", "levels": ["open"] },
-      { "time": "1:00 PM - 3:00 PM", "class": "Advanced & Team Trials Training", "instructor": "Coach Stephon", "type": "wushu", "levels": ["advanced", "competition"] }
+      { "time": "1:00 PM - 3:00 PM", "class": "Advanced & Competition Training", "instructor": "Coach Stephon", "type": "wushu", "levels": ["advanced", "competition"] }
     ]
   },
   "taichi": {

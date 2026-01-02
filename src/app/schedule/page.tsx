@@ -6,6 +6,32 @@ import scheduleData from '@/data/schedule.json';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 
+interface TooltipProps {
+    content: string;
+    children: React.ReactNode;
+}
+
+const Tooltip: React.FC<TooltipProps> = ({ content, children }) => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    return (
+        <div className="relative inline-block">
+            <div
+                onMouseEnter={() => setIsVisible(true)}
+                onMouseLeave={() => setIsVisible(false)}
+            >
+                {children}
+            </div>
+            {isVisible && (
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-gray-800 text-white text-xs rounded z-10 whitespace-nowrap">
+                    {content}
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-b-gray-800"></div>
+                </div>
+            )}
+        </div>
+    );
+};
+
 
 type ScheduleClass = {
     time: string;
@@ -92,6 +118,17 @@ export default function Schedule() {
             case 'competition': return 'bg-red-100 text-red-800 border-red-200';
             case 'open': return 'bg-gray-100 text-gray-800 border-gray-200';
             default: return 'bg-gray-100 text-gray-800 border-gray-200';
+        }
+    };
+
+    const getLevelSashColors = (level: string, isWeapon: boolean) => {
+        switch (level) {
+            case 'beginner': return !isWeapon ?  'No Sash to Gold Sash' : 'Yellow Sash to Green Sash';
+            case 'intermediate': return 'Blue Sash to Purple Sash';
+            case 'advanced': return 'Purple Sash to Black Sash';
+            case 'competition': return 'By Coach Approval';
+            case 'open': return 'All Levels';
+            default: return 'All Levels';
         }
     };
 
@@ -188,7 +225,7 @@ export default function Schedule() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                                    className="bg-white rounded-2xl shadow-lg overflow-hidden"
+                                    className="bg-white rounded-2xl shadow-lg overflow-visible"
                                 >
                                     <div className="bg-primary text-white p-4 text-center">
                                         <h3 className="font-bold text-lg">{dayNames[index]}</h3>
@@ -208,9 +245,11 @@ export default function Schedule() {
                                                             {classItem.type}
                                                         </span>
                                                         {classItem.levels.map((lvl: string, lvlIndex: number) => (
-                                                            <span key={lvlIndex} className={`px-2 py-1 rounded-full text-xs font-medium border ${getClassColor(lvl)} break-words`}>
-                                                                {lvl}
-                                                            </span>
+                                                            <Tooltip key={lvlIndex} content={getLevelSashColors(lvl, classItem.class.includes('Weapon'))}>
+                                                                <span key={lvlIndex} className={`px-2 py-1 rounded-full text-xs font-medium border ${getClassColor(lvl)} break-words`}>
+                                                                    {lvl}
+                                                                </span>
+                                                            </Tooltip>
                                                         ))}
                                                     </div>
                                                 </div>

@@ -36,7 +36,7 @@ const AboutPreview = () => {
             About NOVA Wushu Academy
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Established in 2010 under the direction of Coach Stephon Morton, NOVA Wushu Academy 
+            Established in 2010 under the direction of Coach Stephon Morton, Northern Virginia (NOVA) Wushu Academy 
             is a premier martial arts center dedicated to teaching both contemporary and traditional 
             wushu styles, including weapons training and Tai Chi.
           </p>

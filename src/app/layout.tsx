@@ -116,6 +116,17 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: localBusinessJson }}
         />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-TD9MCHQ1E4"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-TD9MCHQ1E4');
+            `,
+          }}
+        />
         <Navigation />
         <main className="min-h-screen">
           {children}

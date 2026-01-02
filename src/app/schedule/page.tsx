@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Clock, Users, Filter } from 'lucide-react';
 import scheduleData from '@/data/schedule.json';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import Link from 'next/link';
 
 interface TooltipProps {
@@ -12,27 +12,46 @@ interface TooltipProps {
 }
 
 const Tooltip: React.FC<TooltipProps> = ({ content, children }) => {
-    const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [position, setPosition] = useState({ top: 0, left: 0 });
+  const triggerRef = useRef<HTMLDivElement>(null);
 
-    return (
-        <div className="relative inline-block">
-            <div
-                onMouseEnter={() => setIsVisible(true)}
-                onMouseLeave={() => setIsVisible(false)}
-            >
-                {children}
-            </div>
-            {isVisible && (
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-gray-800 text-white text-xs rounded z-10 whitespace-nowrap">
-                    {content}
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-b-gray-800"></div>
-                </div>
-            )}
+  const handleMouseEnter = () => {
+    if (triggerRef.current) {
+      const rect = triggerRef.current.getBoundingClientRect();
+      setPosition({
+        top: rect.bottom + 5, // 5px below
+        left: rect.left + rect.width / 2,
+      });
+    }
+    setIsVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsVisible(false);
+  };
+
+  return (
+    <div className="relative inline-block">
+      <div
+        ref={triggerRef}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {children}
+      </div>
+      {isVisible && (
+        <div
+          className="fixed px-2 py-1 bg-gray-800 text-white text-xs rounded z-50 whitespace-nowrap transform -translate-x-1/2"
+          style={{ top: position.top, left: position.left }}
+        >
+          {content}
+          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-b-gray-800"></div>
         </div>
-    );
+      )}
+    </div>
+  );
 };
-
-
 type ScheduleClass = {
     time: string;
     class: string;
@@ -215,7 +234,7 @@ export default function Schedule() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4"
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 overflow-visible"
                     >
                         {days.map((day, index) => {
                             const dayClasses = filteredClasses.filter(classItem => classItem.dayKey === day);
@@ -225,7 +244,7 @@ export default function Schedule() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                                    className="bg-white rounded-2xl shadow-lg overflow-visible"
+                                    className="bg-white rounded-2xl shadow-lg overflow-hidden"
                                 >
                                     <div className="bg-primary text-white p-4 text-center">
                                         <h3 className="font-bold text-lg">{dayNames[index]}</h3>

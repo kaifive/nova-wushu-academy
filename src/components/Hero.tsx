@@ -16,16 +16,19 @@ import khai from '../../public/images/gallery/khai.jpg'
 import khang from '../../public/images/gallery/khang.jpg'
 import mariel from '../../public/images/gallery/mariel.jpg'
 
+import group1 from '../../public/images/gallery/group1.jpg'
+
 const galleryItems: { img: StaticImageData; alt: string }[] = [
-  { img: aaron, alt: 'Aaron practicing Wushu form at NOVA Wushu Academy' },
-  { img: audrey, alt: 'Audrey demonstrating Taiji / Tai Chi at NOVA Wushu Academy' },
-  { img: blake, alt: 'Blake performing a Wushu routine' },
-  { img: chloe, alt: 'Chloe training barefoot in a Wushu class' },
-  { img: chris, alt: 'Chris practicing a weapon form' },
-  { img: danny, alt: 'Danny training in Wushu kicks and acrobatics' },
-  { img: khai, alt: 'Khai performing a Wushu routine' },
-  { img: khang, alt: 'Khang practicing with a traditional Wushu weapon' },
-  { img: mariel, alt: 'Mariel demonstrating a Taiji sequence' },
+  { img: aaron, alt: 'Aaron gallery photo' },
+  { img: audrey, alt: 'Audrey gallery photo' },
+  { img: blake, alt: 'Blake gallery photo' },
+  { img: chloe, alt: 'Chloe gallery photo' },
+  { img: chris, alt: 'Chris gallery photo' },
+  { img: danny, alt: 'Danny gallery photo' },
+  { img: khai, alt: 'Khai gallery photo' },
+  { img: khang, alt: 'Khang gallery photo' },
+  { img: mariel, alt: 'Mariel gallery photo' },
+  { img: group1, alt: 'NOVA Wushu Academy group photo' },
 ];
 
 const Hero = () => {

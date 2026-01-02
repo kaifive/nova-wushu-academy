@@ -53,7 +53,7 @@ const CoachCard = ({ coach }: CoachCardProps) => {
               src={coachImg}
               alt={`${coach.name} — ${coach.title} at NOVA Wushu Academy`}
               fill
-              className="object-cover"
+              className="object-cover object-top"
               priority
               onClick={(e) => {
                 if (e.detail == 5) {

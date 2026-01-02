@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: '/images/branding/NOVA Wushu Circle.png',
+  },
   openGraph: {
     title: "NOVA Wushu Academy - Premier Martial Arts Training",
     description: "Professional Wushu and Taiji training in Northern Virginia. Build confidence, discipline, and excellence through martial arts.",

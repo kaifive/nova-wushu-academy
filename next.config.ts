@@ -4,8 +4,7 @@ const repoName = 'nova-wushu-academy';
 const nextConfig = {
   ...(isProd && { output: 'export' }),
   images: { unoptimized: true },
-  basePath: isProd ? `/${repoName}` : '',
-  assetPrefix: isProd ? `/${repoName}/` : '',
+  // Removed basePath and assetPrefix for custom domain compatibility
 };
 
 module.exports = nextConfig;

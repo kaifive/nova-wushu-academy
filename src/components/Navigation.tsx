@@ -91,16 +91,23 @@ const Navigation = () => {
                             <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                                 <div className="py-2">
                                     {studentResources.map((resource) => (
-                                        <a
+                                        // <a
+                                        //     key={resource.name}
+                                        //     href={resource.href}
+                                        //     target="_blank"
+                                        //     rel="noopener noreferrer"
+                                        //     className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200"
+                                        // >
+                                        //     <div className="font-medium">{resource.name}</div>
+                                        //     <div className="text-xs text-gray-500">{resource.description}</div>
+                                        // </a>
+                                        <span
                                             key={resource.name}
-                                            href={resource.href}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200"
+                                            className="block px-4 py-3 text-sm text-gray-700 cursor-not-allowed opacity-50"
                                         >
                                             <div className="font-medium">{resource.name}</div>
                                             <div className="text-xs text-gray-500">{resource.description}</div>
-                                        </a>
+                                        </span>
                                     ))}
                                 </div>
                             </div>

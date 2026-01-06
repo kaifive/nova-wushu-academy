@@ -114,13 +114,18 @@ const Footer = () => {
             <ul className="space-y-2 mb-6">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  <Link
+                  {/* <Link
                     href={link.href}
                     className="text-gray-300 hover:text-primary transition-colors duration-200"
                     target={link.target || '_self'}
                   >
                     {link.name}
-                  </Link>
+                  </Link> */}
+                  <span
+                    className="text-gray-300 cursor-not-allowed opacity-50"
+                  >
+                    {link.name}
+                  </span>
                 </li>
               ))}
             </ul>

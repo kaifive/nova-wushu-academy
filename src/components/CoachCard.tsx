@@ -9,6 +9,7 @@ import Image, { StaticImageData } from 'next/image';
 
 import stephon from '../../public/images/coaches/stephon.jpg'
 import danny from '../../public/images/coaches/danny.jpg'
+import debbie from '../../public/images/coaches/deborah-yang.jpg'
 import coachstephon from '../../public/images/coaches/coachstephon.jpg'
 import coachdanny from '../../public/images/coaches/coachdanny.jpg'
 
@@ -31,6 +32,7 @@ const IMAGE_MAP: Record<string, StaticImageData> = {
   '/images/coaches/danny.jpg': danny,
   '/images/coaches/coachstephon.jpg': coachstephon,
   '/images/coaches/coachdanny.jpg': coachdanny,
+  '/images/coaches/deborah-yang.jpg': debbie,
 }
 
 const CoachCard = ({ coach }: CoachCardProps) => {

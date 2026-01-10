@@ -1,5 +1,4 @@
 export const WUSHU_TOOLKIT = "https://kaifive.github.io/wushu-toolkit/"
-// export const APPAREL_STORE = "https://store.novawushuacademy.com/"
 export const APPAREL_STORE = "https://novawushu.secondslide.io/"
 
 export const NOVA_FB = "https://www.facebook.com/profile.php?id=100054627512693"

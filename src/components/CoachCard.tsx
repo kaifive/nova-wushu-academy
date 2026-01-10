@@ -7,11 +7,8 @@ import { Award, Users, Star, User } from 'lucide-react';
 
 import Image, { StaticImageData } from 'next/image';
 
-import stephon from '../../public/images/coaches/stephon.jpg'
-import danny from '../../public/images/coaches/danny.jpg'
 import debbie from '../../public/images/coaches/deborah-yang.jpg'
 import coachstephon from '../../public/images/coaches/coachstephon.jpg'
-import coachdanny from '../../public/images/coaches/coachdanny.jpg'
 
 interface CoachCardProps {
   coach: {
@@ -28,16 +25,11 @@ interface CoachCardProps {
 }
 
 const IMAGE_MAP: Record<string, StaticImageData> = {
-  '/images/coaches/stephon.jpg': stephon,
-  '/images/coaches/danny.jpg': danny,
   '/images/coaches/coachstephon.jpg': coachstephon,
-  '/images/coaches/coachdanny.jpg': coachdanny,
   '/images/coaches/deborah-yang.jpg': debbie,
 }
 
 const CoachCard = ({ coach }: CoachCardProps) => {
-  const [coachImg, setCoachImage] = useState(IMAGE_MAP[coach.image] || null);
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -47,27 +39,16 @@ const CoachCard = ({ coach }: CoachCardProps) => {
       className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
     >
       {/* Coach Image */}
-      <div className="relative h-80 bg-gradient-to-br from-primary/20 to-primary/40">
+      <div className="relative aspect-square bg-gradient-to-br from-primary/20 to-primary/40">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 flex items-center justify-center">
           {coach.image && IMAGE_MAP[coach.image] ? (
             <Image
-              src={coachImg}
+              src={IMAGE_MAP[coach.image]}
               alt={`${coach.name} — ${coach.title} at NOVA Wushu Academy`}
               fill
               className="object-cover object-top"
               priority
-              onClick={(e) => {
-                if (e.detail == 5) {
-                  const easterEggImageArr = coach.image.split("/")
-                  easterEggImageArr[easterEggImageArr.length - 1] = easterEggImageArr[easterEggImageArr.length - 1].replace("coach", "");
-                  const easterEggImagePath = easterEggImageArr.join("/");
-                  const easterEggImage = IMAGE_MAP[easterEggImagePath];
-                  setCoachImage(easterEggImage);
-                } else {
-                  setCoachImage(IMAGE_MAP[coach.image]);
-                }
-              }}
             />
           ) : (
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">

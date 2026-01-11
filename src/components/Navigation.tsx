@@ -16,6 +16,7 @@ import logoSrc from '../../public/images/branding/NOVA Wushu Circle.png'
 
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isResourcesOpen, setIsResourcesOpen] = useState(false);
     const pathname = usePathname();
 
 
@@ -58,7 +59,7 @@ const Navigation = () => {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-8">
+                    <div className="hidden lg:flex items-center space-x-8">
                         {navItems.map((item) => (
                             <Link
                                 key={item.name}
@@ -83,7 +84,7 @@ const Navigation = () => {
                         {/* Student Resources Dropdown */}
                         <div className="relative group">
                             <button className="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors duration-200">
-                                <span>Student Resources</span>
+                                <span>Resources</span>
                                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                 </svg>
@@ -110,7 +111,7 @@ const Navigation = () => {
                     {/* Mobile menu button */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="md:hidden p-2 rounded-md text-gray-700 hover:text-primary hover:bg-gray-100 transition-colors duration-200"
+                        className="lg:hidden p-2 rounded-md text-gray-700 hover:text-primary hover:bg-gray-100 transition-colors duration-200"
                         aria-label="Toggle menu"
                     >
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -125,7 +126,7 @@ const Navigation = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-white border-t border-gray-200"
+                        className="lg:hidden bg-white border-t border-gray-200"
                     >
                         <div className="px-4 py-4 space-y-2">
                             {navItems.map((item) => (
@@ -141,6 +142,36 @@ const Navigation = () => {
                                     {item.name}
                                 </Link>
                             ))}
+                            
+                            {/* Mobile Student Resources */}
+                            <div className="border-t border-gray-200 pt-2">
+                                <button
+                                    onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                                    className="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100 rounded-md transition-colors duration-200"
+                                >
+                                    <span>Resources</span>
+                                    <svg className={`w-4 h-4 transition-transform duration-200 ${isResourcesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                                {isResourcesOpen && (
+                                    <div className="pl-4 pt-2 space-y-2">
+                                        {studentResources.map((resource) => (
+                                            <a
+                                                key={resource.name}
+                                                href={resource.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                onClick={() => setIsOpen(false)}
+                                                className="block px-3 py-2 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md transition-colors duration-200"
+                                            >
+                                                <div className="font-medium">{resource.name}</div>
+                                                <div className="text-xs text-gray-500">{resource.description}</div>
+                                            </a>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </motion.div>
                 )}

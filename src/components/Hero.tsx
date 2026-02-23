@@ -3,8 +3,9 @@
 import { motion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { HERO_YT_VIDEO } from '@/data/links';
 
 import aaron from '../../public/images/gallery/aaron.jpg'
 import audrey from '../../public/images/gallery/audrey.jpg'
@@ -59,6 +60,33 @@ const Hero = () => {
       }, 600);
     });
   }, []);
+
+  // --- Video overlay state ---
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setShowVideo(false);
+    };
+    if (showVideo) {
+      document.addEventListener('keydown', onKey);
+      // prevent background scrolling
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [showVideo]);
+
+  const getEmbedUrl = (url: string) => {
+    // Extract YouTube ID from common URL formats
+    const ytIdMatch = url.match(/[?&]v=([\w-]{11})/) || url.match(/youtu\.be\/([\w-]{11})/) || url.match(/embed\/([\w-]{11})/);
+    const id = ytIdMatch ? ytIdMatch[1] : null;
+    return id ? `https://www.youtube.com/embed/${id}?autoplay=1&rel=0` : url;
+  };
 
 
   // --- LOADING ANIMATION ---
@@ -156,12 +184,16 @@ const Hero = () => {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
 
-            {/* <button aria-label="Watch our story video" className="group flex items-center space-x-2 text-white hover:text-white-400 hover:underline transition-colors duration-300">
+            <button
+              aria-label="Watch our recent performance"
+              onClick={() => setShowVideo(true)}
+              className="group flex items-center space-x-2 text-white hover:text-white-400 hover:underline transition-colors duration-300 cursor-pointer"
+            >
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors duration-300">
                 <Play className="w-6 h-6 ml-1" />
               </div>
-              <span className="text-lg font-medium">Watch Our Story</span>
-            </button> */}
+              <span className="text-lg font-medium">See Us In Action</span>
+            </button>
           </div>
         </motion.div>
       </div>
@@ -229,6 +261,31 @@ const Hero = () => {
           />
         </motion.div>
       </motion.div>
+      {showVideo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75">
+          <div className="relative w-full max-w-4xl mx-4">
+            <div className="aspect-video bg-black rounded-lg overflow-hidden">
+              <iframe
+                src={getEmbedUrl(HERO_YT_VIDEO)}
+                title="NOVA Wushu Academy Video"
+                width="100%"
+                height="100%"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowFullScreen
+                frameBorder={0}
+                className="w-full h-full"
+              />
+            </div>
+            <button
+              aria-label="Close video"
+              onClick={() => setShowVideo(false)}
+              className="absolute -top-4 -right-4 bg-white rounded-full p-2 shadow-lg text-gray-800 hover:bg-gray-100 cursor-pointer"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

@@ -1,42 +1,210 @@
 {
   "novaWushu": {
     "monday": [
-      { "time": "5:00 PM - 6:00 PM", "class": "Beginner Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["beginner"] },
-      { "time": "6:00 PM - 7:00 PM", "class": "Intermediate Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["intermediate"] },
-      { "time": "7:00 PM - 8:00 PM", "class": "Team Trials & Competition Training", "instructor": "Coach Stephon", "type": "wushu", "levels": ["competition"] }
+      {
+        "time": "5:00 PM - 6:00 PM",
+        "class": "Beginner Barehand",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "beginner"
+        ]
+      },
+      {
+        "time": "6:00 PM - 7:00 PM",
+        "class": "Intermediate Barehand",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "intermediate"
+        ]
+      },
+      {
+        "time": "7:00 PM - 8:00 PM",
+        "class": "Team Trials & Competition Training",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "competition"
+        ]
+      }
     ],
     "tuesday": [
-      { "time": "5:00 PM - 6:00 PM", "class": "Beginner Short Weapon", "instructor": "Coach Stephon", "type": "wushu", "levels": ["beginner"] },
-      { "time": "6:00 PM - 7:00 PM", "class": "Beginner & Intermediate Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["beginner", "intermediate"] },
-      { "time": "7:00 PM - 8:00 PM", "class": "Advanced & Competition Short Weapon", "instructor": "Coach Stephon", "type": "wushu", "levels": ["advanced", "competition"] }
+      {
+        "time": "5:00 PM - 6:00 PM",
+        "class": "Beginner Short Weapon",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "beginner"
+        ]
+      },
+      {
+        "time": "6:00 PM - 7:00 PM",
+        "class": "Beginner & Intermediate Barehand",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "beginner",
+          "intermediate"
+        ]
+      },
+      {
+        "time": "7:00 PM - 8:00 PM",
+        "class": "Advanced & Competition Short Weapon",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "advanced",
+          "competition"
+        ]
+      }
     ],
     "wednesday": [
-      { "time": "5:00 PM - 6:00 PM", "class": "Beginner Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["beginner"] },
-      { "time": "6:00 PM - 7:00 PM", "class": "Intermediate Short Weapon", "instructor": "Coach Stephon", "type": "wushu", "levels": ["intermediate"] },
-      { "time": "7:00 PM - 8:00 PM", "class": "Advanced & Competition Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["advanced", "competition"] }
+      {
+        "time": "5:00 PM - 6:00 PM",
+        "class": "Beginner Barehand",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "beginner"
+        ]
+      },
+      {
+        "time": "6:00 PM - 7:00 PM",
+        "class": "Intermediate Short Weapon",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "intermediate"
+        ]
+      },
+      {
+        "time": "7:00 PM - 8:00 PM",
+        "class": "Advanced & Competition Barehand",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "advanced",
+          "competition"
+        ]
+      }
     ],
     "thursday": [
-      { "time": "5:00 PM - 6:00 PM", "class": "Beginner Long Weapon", "instructor": "Coach Stephon", "type": "wushu", "levels": ["beginner"] },
-      { "time": "6:00 PM - 7:00 PM", "class": "Beginner & Intermediate Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["beginner", "intermediate"] },
-      { "time": "7:00 PM - 8:00 PM", "class": "Advanced & Competition Long Weapon", "instructor": "Coach Stephon", "type": "wushu", "levels": ["advanced", "competition"] }
+      {
+        "time": "5:00 PM - 6:00 PM",
+        "class": "Beginner Long Weapon",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "beginner"
+        ]
+      },
+      {
+        "time": "6:00 PM - 7:00 PM",
+        "class": "Beginner & Intermediate Barehand",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "beginner",
+          "intermediate"
+        ]
+      },
+      {
+        "time": "7:00 PM - 8:00 PM",
+        "class": "Advanced & Competition Long Weapon",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "advanced",
+          "competition"
+        ]
+      }
     ],
     "friday": [
-      { "time": "5:00 PM - 6:00 PM", "class": "Beginner Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["beginner"] },
-      { "time": "6:00 PM - 7:00 PM", "class": "Intermediate Long Weapon", "instructor": "Coach Stephon", "type": "wushu", "levels": ["intermediate"] },
-      { "time": "7:00 PM - 8:00 PM", "class": "Nandu Training", "instructor": "Coach Stephon", "type": "wushu", "levels": ["advanced", "competition"] }
+      {
+        "time": "5:00 PM - 6:00 PM",
+        "class": "Beginner Barehand",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "beginner"
+        ]
+      },
+      {
+        "time": "6:00 PM - 7:00 PM",
+        "class": "Intermediate Long Weapon",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "intermediate"
+        ]
+      },
+      {
+        "time": "7:00 PM - 8:00 PM",
+        "class": "Nandu Training",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "advanced",
+          "competition"
+        ]
+      }
     ],
     "saturday": [
-      { "time": "10:00 AM - 11:00 AM", "class": "Open Barehand", "instructor": "Coach Stephon", "type": "wushu", "levels": ["open"] },
-      { "time": "11:00 AM - 12:00 PM", "class": "Open Mixed Weapon", "instructor": "Coach Stephon", "type": "wushu", "levels": ["open"] },
-      { "time": "1:00 PM - 3:00 PM", "class": "Advanced & Competition Training", "instructor": "Coach Stephon", "type": "wushu", "levels": ["advanced", "competition"] }
+      {
+        "time": "10:00 AM - 11:00 AM",
+        "class": "Open Barehand",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "open"
+        ]
+      },
+      {
+        "time": "11:00 AM - 12:00 PM",
+        "class": "Open Mixed Weapon",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "open"
+        ]
+      },
+      {
+        "time": "1:00 PM - 3:00 PM",
+        "class": "Advanced & Competition Training",
+        "instructor": "Coach Stephon",
+        "type": "wushu",
+        "levels": [
+          "advanced",
+          "competition"
+        ]
+      }
     ]
   },
   "taichi": {
-    "monday": [],
-    "tuesday": [],
-    "wednesday": [
-      { "time": "6:00 PM - 7:00 PM", "class": "Health Qigong / Fundamental Tai Chi", "instructor": "Coach Debbie", "type": "taichi", "levels": ["open"] }
+    "monday": [
+      {
+        "time": "5:00 PM - 6:00 PM",
+        "class": "Tai Chi Sword / Fan",
+        "instructor": "Coach Debbie",
+        "type": "taichi",
+        "levels": [
+          "open"
+        ]
+      },
+      {
+        "time": "6:00 PM - 7:00 PM",
+        "class": "Tai Chi Barehand",
+        "instructor": "Coach Debbie",
+        "type": "taichi",
+        "levels": [
+          "open"
+        ]
+      }
     ],
+    "tuesday": [],
+    "wednesday": [],
     "thursday": [],
     "friday": [],
     "saturday": []
